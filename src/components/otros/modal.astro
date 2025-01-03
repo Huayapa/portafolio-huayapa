@@ -1,0 +1,119 @@
+---
+type booleanStr = "true" | "false";
+interface Props {
+  title: string,
+  descript: string,
+  isSuccess:  booleanStr
+}
+const {title, descript, isSuccess = "false"} = Astro.props
+---
+
+<dialog class={"modal-message"} data-isSuccess={isSuccess}>
+  <article>
+    <div class="section-img">
+      <canvas id="dotlottie-canvas" style="width: 5rem; height:5rem;"></canvas>
+    </div>
+    <div class="section-info">
+      <h3>{title}</h3>
+      <p>{descript}</p>
+    </div>
+  </article>
+  <button onclick="this.parentElement.close()">X</button>
+</dialog>
+
+<script >
+  import { DotLottie } from '@lottiefiles/dotlottie-web';
+  document.addEventListener("astro:page-load", () => {
+    // MOSTRAR LA MODAL Y BACKDROP
+    const $dialogs = document.querySelectorAll(".modal-message");
+    $dialogs?.forEach((dialog:any) => {
+      dialog?.showModal();
+      // ANIMACION SI SALIO CORRECTO EL ENVIO O NO
+      let animation = "https://lottie.host/4db68bbd-31f6-4cd8-84eb-189de081159a/IGmMCqhzpt.lottie";
+      if(dialog?.dataset.issuccess == "true") {
+        animation = "./animation/success.json"
+      } else {
+        animation = "./animation/error.json"
+      }
+      new DotLottie({
+        autoplay: true,
+        loop: false,
+        canvas: document.querySelector('#dotlottie-canvas')!,
+        src: animation,
+      });
+    })
+  })
+</script>
+
+
+<style>
+  .modal-message {
+  max-width: 24rem;
+  min-height: 10rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid var(--border-modal-primary-c-dark);
+  text-align: center;
+  background-color: var(--fondo-modal-primary-c-dark);
+  color: var(--text-modal-primary-c-dark);
+  opacity: 0;
+  transition:opacity .3s ease, display 0.3s ease allow-discrete;
+  & article {
+    width: 100%;
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  & button {
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    background-color: var(--fondo-box-secondary-c-dark);
+    color: white;
+    border: var(--border-box-secodary-c-dark) 2px solid;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+.modal-message[open] {
+  scale: 1;
+  opacity: 1;
+  transition: scale .3s ease;
+  @starting-style {
+    scale: 0.8;
+    opacity: 0.6;
+  }
+}
+.modal-message::backdrop {
+  background-color: #00000079;
+}
+.section-info {
+  max-width: 14rem;
+  width: 100%;
+  & h3, p {
+    margin: 0.4rem 0;
+    overflow-wrap: break-word;
+  }
+  & h3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  & p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+}
+.section-img {
+  max-width: 5rem;
+  min-height: 5rem;
+  width: 100%;
+}
+</style>

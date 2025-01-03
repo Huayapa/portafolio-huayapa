@@ -1,0 +1,35 @@
+---
+import ProyectList from "./proyectList.astro";
+
+---
+
+<section class="misProyectos">
+  <ProyectList nameList="Proyectos Destacados" MinlimitCards="0" MaxlimitCards="3"/>
+	<!-- <div>
+		<article>
+			<ul>asdsa	</ul>
+		</article>
+	</div> -->
+	<ProyectList nameList="Todos los proyectos" MinlimitCards="3" MaxlimitCards="6"/>
+</section>
+
+<style>
+.misProyectos {
+	max-width: 90rem;
+	width: 100%;
+	margin: 0 auto;
+}
+/* div {
+	max-width: 90rem;
+	display: flex;
+	gap: 1.4rem;
+	flex-wrap: wrap;
+	& article {
+		margin: 1rem 0;
+		max-width: 20rem;
+		width: 100%;
+		padding: 1rem;
+		background-color: var(--fondo-box-primary-c-dark);
+	}
+} */
+</style>

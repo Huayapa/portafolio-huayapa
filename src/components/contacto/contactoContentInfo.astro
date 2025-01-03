@@ -1,0 +1,115 @@
+---
+type booleanString = "true" | "false";
+interface Props {
+  svgViewInfo:string;
+  titleContent:string;
+  contentText:string;
+  activeLink?: booleanString;
+  hrefLink?: string;
+}
+const {svgViewInfo, titleContent, contentText, activeLink , hrefLink} = Astro.props;
+---
+
+{
+  (activeLink != undefined || activeLink == "true") ?
+  <section>
+    <a href={hrefLink} target="_blank">
+      <div class="box-svg">
+        {<Fragment set:html={svgViewInfo} />}
+      </div>
+      <div class="content-info">
+        <h3>{titleContent}</h3>
+        <strong>{contentText}</strong>
+      </div>
+    </a>
+  </section>
+  :
+  <section>
+    <div class="box-svg">
+      {<Fragment set:html={svgViewInfo} />}
+    </div>
+    <div class="content-info">
+      <h3>{titleContent}</h3>
+      <strong>{contentText}</strong>
+    </div>
+  </section>
+}
+
+<style>
+  section {
+    max-width: 30rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--text-important-c-dark);
+  }
+  a {
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--text-important-c-dark);
+    transition: all 0.5s ease;
+  }
+  a:hover {
+    scale: 0.9;
+    background-color: #Ffffff20;
+    filter: brightness(100%);
+  }
+  .box-svg {
+    width: 4rem;
+    height: 4rem;
+    margin:  1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--border-box-primary-c-dark);
+    background-color: var(--fondo-box-primary-c-dark);
+  }
+  .content-info {
+    max-width: 40rem;
+    width: calc(100% - 6rem);
+    font-weight: normal;
+    overflow-wrap: break-word;
+    & h3 {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    & strong {
+      width: 100%;
+      font-size: clamp(0.8rem, 2vw, 1.4rem)
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    a {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-width: none;
+      transition: all 0.5s ease;
+    }
+    section {
+      max-width: 100%;
+      min-width: min-content;
+      width: 100%;
+      padding: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .box-svg {
+      margin: 0.5rem;
+    }
+    .content-info {
+      max-width: 60vw;
+      width: 100%;
+      text-align: center;
+      white-space: wrap;
+    }
+
+  }
+
+</style>

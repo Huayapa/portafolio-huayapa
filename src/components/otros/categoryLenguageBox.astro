@@ -1,0 +1,67 @@
+---
+type Category = "JS" | "PHP" | "HTML" | "CSS" | "TS" | "MySql" | "Angular" | "Astro";
+interface Props {
+  categoria: Category
+}
+const {categoria} = Astro.props
+---
+
+<div class={"style-lenguage "+ "color"+categoria}>
+  <p>
+    {categoria}
+  </p>
+</div>
+
+<style>
+  .style-lenguage {
+    max-width: 4rem;
+    width: 100%;
+    padding: 0.3rem 0.3rem;
+    background-color: var(--fondo-box-secondary-c-dark);
+    border-radius: 5px;
+    border: 2px solid var(--border-box-secodary-c-dark);
+    & p {
+      margin: 0;
+      font-size:clamp(0.7rem, 2vw ,0.8rem);
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  /* Diseño de color para cada lenguaje */
+  .style-lenguage {
+    &.colorJS {
+      background-color: var(--fondo-lenguaje-JS);
+      border-color: var(--border-lenguaje-JS);
+    }
+    &.colorHTML {
+      background-color: var(--fondo-lenguaje-HTML);
+      border-color: var(--border-lenguaje-HTML);
+    }
+    &.colorPHP {
+      background-color: var(--fondo-lenguaje-PHP);
+      border-color: var(--border-lenguaje-PHP);
+    }
+    &.colorCSS {
+      background-color: var(--fondo-lenguaje-CSS);
+      border-color: var(--border-lenguaje-CSS);
+    }
+    &.colorMYSQL {
+      background-color: var(--fondo-lenguaje-MYSQL);
+      border-color: var(--border-lenguaje-MYSQL);
+    }
+    &.colorTS {
+      background-color: var(--fondo-lenguaje-TS);
+      border-color: var(--border-lenguaje-TS);
+    }
+    &.colorASTRO {
+      background-color: var(--fondo-lenguaje-ASTRO);
+      border-color: var(--border-lenguaje-ASTRO);
+    }
+    &.colorANGULAR {
+      background-color: var(--fondo-lenguaje-ANGULAR);
+      border-color: var(--border-lenguaje-ANGULAR);
+    }
+  }
+</style>

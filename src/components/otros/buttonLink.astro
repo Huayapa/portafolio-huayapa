@@ -1,0 +1,76 @@
+---
+type ColorBtnSelect = "blue" | "purple";
+type booleanString = "true" | "false";
+type formStyle = "Section" | "Card";
+
+interface Props {
+  hrefBtn:string,
+  nameBtn:string,
+  styleBtn:ColorBtnSelect,
+  _blank: booleanString,
+  formBtn:formStyle
+}
+const {hrefBtn, nameBtn, styleBtn, _blank, formBtn} = Astro.props;
+---
+
+<a 
+  href={hrefBtn}
+  class:list={[{
+    "sectionStyle": formBtn == "Section",
+    "cardStyle": formBtn == "Card" 
+  }]}
+  class={"color-"+styleBtn}
+  target={_blank === "true" ? '_blank' : '_self'}>
+  {nameBtn}
+</a>
+
+
+<style>
+a.sectionStyle, a.cardStyle {
+  cursor: pointer;
+  display: block;
+  max-width: 12rem;
+  width: 100%;
+  min-width: 7rem;
+
+  background-color: transparent;
+  color: var(--text-btn-c-dark);
+
+  padding: 1rem 0.4rem;
+  border-radius: 10px;
+  border: 2px solid var(--border-btn-default-c-dark);
+
+  text-decoration: none;
+  text-align: center;
+  font-size: clamp(0.8rem, 2vw, 1.4rem);
+  transition: all 0.5s ease;
+  
+  &:hover {
+    background-color: var(--fondo-btn-default-c-dark);
+  }
+}
+a.sectionStyle {
+  animation: animationTop 1s ease;
+}
+a.cardStyle {
+  max-width: 100%;
+  border-radius: 5px;
+  padding: 0.3rem 0rem;
+}
+a.color-blue {
+  border: 2px solid var(--border-btn-blue-c-dark);
+  &:hover {
+    background-color: var(--fondo-btn-blue-c-dark);
+    box-shadow: 1px 1px 20px -1px var(--border-btn-blue-c-dark);
+  }
+}
+
+a.color-purple {
+  border: 2px solid var(--border-btn-purple-c-dark);
+  &:hover {
+    background-color: var(--fondo-btn-purple-c-dark);
+    box-shadow: 1px 1px 20px -1px var(--border-btn-purple-c-dark);
+  }
+}
+
+</style>

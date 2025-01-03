@@ -1,0 +1,49 @@
+---
+type typeLine = "none" | "underline";
+type typetargeth = "h1" | "h2" | "h3";
+interface Props {
+  nameTitle:string;
+  addLine: typeLine;
+  typeTarget: typetargeth
+}
+const {nameTitle, addLine, typeTarget} = Astro.props;
+---
+{typeTarget == "h1" && <h1 transition:name="titulo1" class={"style-"+addLine}>{nameTitle}</h1>}
+{typeTarget == "h2" && <h2 class={"style-"+addLine}>{nameTitle}</h2>}
+{typeTarget == "h3" && <h3 class={"style-"+addLine}>{nameTitle}</h3>}
+
+<style>
+  h1{
+    margin: 0;
+    font-size: clamp(1.4rem, 10vw, 2.6rem);
+    color: var(--text-important-c-dark);
+  }
+  h2 {
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    color: var(--text-important-c-dark);
+    margin: 0;
+    animation: animationTop 0.5s ease;
+  }
+  h3 {
+    margin: 0;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    color: var(--text-important-c-dark);
+  }
+  h1, h2, h3 {
+    overflow-wrap: break-word;
+  }
+  h1.style-none, h2.style-none, h3.style-none {
+		width: 100%;
+	}
+  h1.style-underline, h2.style-underline, h3.style-underline {
+    width: fit-content;
+    text-align: center;
+    border-bottom: 4px solid var(--line-title-c-dark);
+  }
+  /* version mobile */
+  @media only screen and (max-width: 870px) {
+    h1.style-underline, h2.style-underline, h3.style-underline {
+      margin: 0 auto;
+    }
+  }
+</style>

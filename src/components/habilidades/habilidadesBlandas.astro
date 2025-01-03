@@ -1,0 +1,58 @@
+---
+import ListContain from "../otros/listContain.astro";
+
+const habilidadesBlandas:Array<string> = ["Compromiso", "Resolver Problemas", "Trabajo en equipo", "Gestion y control del tiempo", "Adaptación a cambios"];
+---
+
+<section class="section-habilidades-blandas">
+  <h2>habilidades Blandas</h2>
+  <ul>
+    {
+      habilidadesBlandas.map((habilidad => (
+        <ListContain name={habilidad}/>
+      )))
+    }
+  </ul>
+</section>
+
+<style>
+  /* SECCION 3 */
+.section-habilidades-blandas {
+  max-width: 80rem;
+  width: 100%;
+  min-width: 0rem;
+  min-height: 25rem;
+  & h2 {
+    width: 100%;
+    overflow-wrap: break-word;
+    text-align: start;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    padding-left: 0.5rem;
+    animation: animationTop 1s ease;
+  }
+  & ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: all 0.5s ease;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .section-habilidades-blandas h2 {
+    text-align: center;
+    padding: 0;
+  }
+  .section-habilidades-blandas ul {
+    & li {
+      max-width: 100%;
+      min-width: 6rem;
+      width: 100%;
+      margin: 0.4rem 2rem;
+      overflow-wrap: break-word;
+    }
+  }
+}
+</style>

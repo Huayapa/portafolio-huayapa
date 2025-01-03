@@ -1,0 +1,75 @@
+---
+import type { proyectData } from "../../types/cardProyect";
+import TitleSection from "../otros/titleSection.astro";
+import ProyectCard from "./proyectCard.astro";
+import { getCollection } from "astro:content";
+
+const proyectos = await getCollection("proyects");
+
+interface Props {
+  nameList: string;
+  MaxlimitCards: string;
+  MinlimitCards: string;
+}
+const {nameList,MinlimitCards, MaxlimitCards} = Astro.props;
+const filterProyects = proyectos.filter(proyecto => proyecto.data.id < Number(MaxlimitCards) + 1 && proyecto.data.id > Number(MinlimitCards))
+---
+
+<article class="proyectListContent">
+  <TitleSection nameTitle={nameList} addLine="underline" typeTarget="h2"/>
+  <section class="listsproyects">
+		{
+			filterProyects.length === 0 && (
+				<div class="isNull">
+					<h3 >Actualmente no hay mas proyectos.</h3>
+				</div>)
+		}
+    {
+      filterProyects.map((proyect) => {
+				const dataInterface:proyectData = {
+					id: proyect.data.id,
+					name: proyect.data.name,
+					descript: proyect.data.descript,
+					image: proyect.data.image,
+					categorys: proyect.data.categorys,
+					linkPage: proyect.data.linkPage,
+					linkGitHub: proyect.data.linkGitHub
+				}
+       return (<ProyectCard dataCard={dataInterface}/>)
+      })
+    }
+  </section>
+</article>
+
+<style>
+.proyectListContent {
+	padding: 1rem 0;
+	& .listsproyects {
+		min-height: 18rem;
+		display: flex;
+		padding: 1rem 0;
+		align-items: stretch;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+}
+.listsproyects  {
+	& div.isNull {
+		max-width: 80rem;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		background-color: var(--fondo-box-primary-c-dark);
+		animation: animationTop 1s ease;
+		& h3 {
+			width: 100%;
+			text-align: center;
+			color: var(--text-alert-dark);
+			font-weight: 400;
+			font-style: italic;
+		}
+	}
+}
+</style>

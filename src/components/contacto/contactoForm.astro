@@ -1,0 +1,243 @@
+---
+import {isValidEmail, isValidPhone} from "../../pages/service/validators"
+import Modal from "../otros/modal.astro";
+const domain = "http://localhost:4321" 
+// export const prerender = false
+let isMessage = null;
+const errors = { nameFull: "", tel: "", email: "" , message: ""};
+if (Astro.request.method === "POST") {
+  
+  try {
+    // VINCULAR LOS INPUTS Y TEXTAREA AL FORMULARIO
+    const data = await Astro.request.formData();
+    const nameFull = data.get("nameComplete");
+    const tel = data.get("telPhone"); 
+    const email = data.get("email");
+    const message = data.get("message");
+    // FECHA ACTUAL DEL ENVIO
+    // OPCIONES PARA CONVERTIR LA FECHA DE MANERA MAS LEGIBLE
+    let fecha = new Date().toLocaleDateString("es-MX", { 
+      weekday:'long', 
+      day:'numeric', 
+      month:'long', 
+      year:'numeric',
+      hour12: true, 
+      hour: "numeric", 
+      minute: "numeric"
+    });
+    // VALIDACIONES PARA CADA INPUT Y TEXTAREA
+    // NOMBRE COMPLETO
+    if (typeof nameFull !== "string" || nameFull.length < 1) {
+      errors.nameFull += "Por favor, ingrese tu nombre completo.";
+    }
+    
+    if(typeof nameFull !== "string" || nameFull.length > 50) {
+      errors.nameFull += "El numero de caracteres fue execedido (50).";
+    }
+    // NUMERO TELEFONICO
+    if (typeof tel !== "string" || tel.length < 10 || !isValidPhone(tel)) {
+      errors.tel += "Numero telefonico no reconocido.";
+    }
+    // CORREO ELECTRONICO
+    if (typeof email !== "string" || !isValidEmail(email)) {
+      errors.email += "Correo no valido.";
+    }
+    // CORREO MENSAGE
+    if (typeof message !== "string" || message.length < 1) {
+      errors.message += "Ingrese un mensaje.";
+    }
+    if (typeof message !== "string" || message.length > 300) {
+      errors.message += "Limite de 300 caracteres exedidos";
+    }
+    
+    const hasErrors = Object.values(errors).some(msg => msg)
+    if (!hasErrors) { 
+      // Codigo cuando todo haya validado correctamente
+      try {
+        const rest = await fetch(`${domain}/service/api/sendEmail.json`, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ //DATOS QUE SE ENVIARAN
+            name: nameFull,
+            phone: tel,
+            email: email ,
+            descript: message,
+            date: fecha,
+          })
+        })
+        const data = await rest.json();
+        isMessage = data;
+        console.log(data);
+      } catch (error) {
+        isMessage = error;
+        console.log(error);
+      }
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+<section class="content_form" >
+  <h2>Trabajemos Juntos</h2>
+  <form method="post" id="form-contact">
+    <label>Nombre Completo
+      <input type="text" name="nameComplete"  maxlength="50" >
+      {errors.nameFull && <span>{errors.nameFull}</span>}
+    </label>
+    <div class="form-column-content">
+      <label>Numero Telefonico
+        <input type="tel" name="telPhone" placeholder="+00-000000000"  maxlength="15" >
+        {errors.tel && <span>{errors.tel}</span>}
+      </label>
+      <label>Correo Electronico
+        <input type="text" name="email"  maxlength="40" >
+        {errors.email && <span>{errors.email}</span>}
+      </label>
+    </div>
+    <label>Mensaje
+      <textarea name="message" maxlength="300"></textarea>
+      {errors.message && <span>{errors.message}</span>}
+    </label>
+    <div class="align-item">
+      <button>Enviar Mensaje</button>
+    </div>
+  </form>
+</section>
+ 
+{
+  isMessage?.success === true && (
+     <Modal title="Enviado correctamente" descript={isMessage.message} isSuccess="true"/>
+  )
+ }
+
+ {
+  isMessage?.success === false && (
+    <Modal title="Ocurrio un problema" descript={isMessage.message} isSuccess="false"/>
+  )
+ }
+
+<style>
+.content_form {
+  min-height: 34rem;
+  max-width: 32rem;
+  width: 100%;
+  min-width: 24rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background-color: var(--fondo-form-c-dark);
+  border: 3px solid var(--line-form-c-dark);
+  animation: animationLeftSection 1s ease;
+  & h2 {
+    text-align: center;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    margin-top: 0;
+  }
+  & label {
+    display: flex;
+    width: 100%;
+    min-height: 6rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    & span {
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      color: var(--text-alert-red-dark)
+    }
+  }
+  & .form-column-content {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    & label {
+      max-width: 30rem;
+      width: 100%;
+      min-width: 10rem;
+      transition: all 0.5s ease;
+    }
+  }
+  & input, textarea {
+    padding: 0.8rem 1rem;
+    border: 0;
+    background-color: var(--fondo-input-c-dark);
+    resize: none;
+    color: white;
+    outline: none;
+    border-bottom: 3px solid var(--line-input-c-dark);
+    transition: all 0.5s ease;
+    &:focus {
+      background-color: var(--fondo-input-focus-c-dark);
+    }
+  }
+  & textarea {
+    height: 8rem;
+  }
+
+  & button {
+    cursor: pointer;
+    max-width: 12rem;
+    width: 100%;
+    min-width: 7rem;
+    margin-top: 1rem;
+
+    background-color: transparent;
+    color: var(--text-btn-c-dark);
+
+    padding: 0.8rem 0.4rem;
+    border-radius: 10px;
+    border: 2px solid var(--border-btn-purple-c-dark);
+
+    text-decoration: none;
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1.4rem);
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: var(--fondo-btn-purple-c-dark);
+    }
+  }
+}
+.align-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 800px) {
+  .content_form .form-column-content {
+    flex-wrap: wrap;
+    gap: 0;
+    & label {
+      max-width: 100%;
+      width: 100%;
+      min-width: none ;
+      
+    }
+  }
+}
+@media only screen and (max-width: 460px) {
+  .content_form {
+    min-height: none;
+    max-width: 100%;
+    width: 100% ;
+    min-width: 10rem ;
+  }
+  .content_form .form-column-content {
+    flex-wrap: wrap;
+    & label {
+      max-width: 100%;
+      width: 100%;
+      min-width: 0rem;
+    }
+  }
+}
+
+</style>

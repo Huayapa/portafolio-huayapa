@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+
+type Categoria_habilidades = "FrontEnd" | "BackEnd" | "Otros";
+
+// interface MisHabilidades {
+//   categoria: Categoria_habilidades;
+//   name:string;
+//   svg:string;
+// }
+
+const habilidadesApps = await getCollection("habilidades");
+
+const categorias:Array<Categoria_habilidades> = ["FrontEnd", "BackEnd", "Otros"]
+---
+<section class="grid-habilidades">
+  {categorias.map((category) => (
+    <article class="box-hability" aria-label={"categoria-"+ category}>
+      <h2>{category}</h2>
+      <section class="hability-icons">
+        {habilidadesApps.filter((icon) => icon.data.category === category).map((data) => (
+          <div>
+            <Fragment set:html={data.body}/>
+            <h3>{data.data.name}</h3>
+          </div>
+        ))}
+      </section>
+    </article>
+  ))}
+</section>
+
+<style>
+  .grid-habilidades {
+  max-width: 80rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  animation: animationTop 1s ease-in-out;
+  }
+  /* DISEÑO PARA CADA ARTICULO */
+.box-hability {
+  max-width: 30rem;
+  width: 100%;
+  min-height: 18rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+  background-color: var(--fondo-box-primary-c-dark);
+  border: 3px solid var(--border-box-primary-c-dark);
+  & h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    padding: 0.5rem 0;
+  }
+  & div {
+    max-width: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    & h3 {
+      text-align: center;
+      margin: 0.5rem 0;
+      font-size: clamp(0.8rem, 5vw, 1rem);
+    }
+  }
+  & .hability-icons {
+    width: 100%;
+    min-height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+    & .svg-icons {
+      width: 20rem;
+    }
+  }
+}
+@media only screen and (max-width: 660px) {
+  .box-hability {
+    margin: 0.4rem 0.4rem;
+  }
+}
+</style>

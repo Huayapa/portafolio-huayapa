@@ -1,0 +1,23 @@
+---
+interface Props {
+  name:string
+}
+const {name} = Astro.props;
+---
+<li>
+ {name}
+</li>
+
+<style>
+li {
+  max-width: 25rem;
+  width: 100%;
+  padding: 1rem 0.3rem ;
+  background-color: var(--fondo-box-secondary-c-dark);
+  border-left: 2px solid var(--border-secondary-c-dark);
+  font-size: clamp(0.8rem, 5vw, 1.4rem);
+  margin: 0.4rem 0.2rem;
+  transition: all 0.5s ease;
+  animation: animationRightSection 1s ease;
+}
+</style>

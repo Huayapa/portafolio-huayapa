@@ -1,0 +1,52 @@
+---
+const {hrefName, name} = Astro.props;
+---
+
+<a href={hrefName} class="enlace_btn">
+  {name}
+</a>
+<script >
+  document.addEventListener("astro:page-load", () => {
+    let enlace = document.querySelectorAll(".enlace_btn");
+    enlace.forEach((btn:any) => {
+      btn.addEventListener("click", (e:Event) => {
+        if(window.location.pathname === btn.pathname) {
+          e?.preventDefault()
+        }
+      })
+      if(window.location.pathname === btn.pathname) {
+        btn.classList.add("activePage");
+      }
+  })
+})
+</script>
+
+<style>
+  .enlace_btn {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    padding: 1rem ;
+    text-transform: uppercase;
+    color: var(--text-link-header-c-dark);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: #ffffff20;
+    }
+  }
+  .enlace_btn.activePage {
+    background-color: #ffffff20;
+    transform: translateY(6px);
+    cursor: default;
+  }
+  @media only screen and (max-width: 660px) {
+    a {
+      width: 100%;
+    }
+    .enlace_btn.activePage {
+    background-color: #ffffff20;
+    transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+
+
+---
+
+<section class="content-info-keys-grid">
+  <div id="box1">
+    <h3>Experiencia</h3>
+    <p>Desarrollador web</p>
+  </div>
+  <div id="box2">
+    <h3>Naci en</h3>
+    <svg width="109" height="67" viewBox="0 0 109 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="0.412537" width="109" height="66.2195" fill="#D91023"/>
+      <rect x="37.2417" y="0.412537" width="33.6083" height="66.2195" fill="white"/>
+    </svg>
+    <p>Lima / Perú</p>
+  </div>
+  <div id="box3">
+    <p>Mi motivación actual es poder <strong>crecer y aumentar mis conocimientos</strong> en la programación para <strong>desarrollar y mejorar mis habilidades</strong>.</p>
+  </div>
+  <div id="box4">
+    <h3>Trabajo Destacado:</h3>
+    <p class="text-secondary-color">Desarrollador Web - GlobalCorpInternational E&M</p>
+  </div>
+  <div id="box5">
+    <h3>Educación:</h3>
+    <ul class="text-secondary-color">
+      <li>Informatica y Desarrollo de Aplicaciones Web - SENATI</li>
+      <li>Aprendizaje Autodidacta</li>
+    </ul>
+  </div>
+</section>
+
+
+<style>
+  .content-info-keys-grid {
+  max-width: 38rem;
+  width: 100%;
+  min-width: 30rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(6rem, 14rem) 1fr;
+  grid-template-rows: repeat(4, min-content);
+  gap: 0.5rem;
+  grid-template-areas: 
+  "box1 box1"
+  "box2 box3"
+  "box4 box4"
+  "box5 box5"
+  ;
+  animation: animationLeftSection 1s ease;
+  & h3, ul, p {
+    margin: 0;
+  }
+  & p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+  & ul li {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+  & .text-secondary-color {
+    color: var(--text-secondary-c-dark);
+  }
+  & h3 {
+    font-size:clamp(1.4rem, 2vw, 1.5rem);
+    font-weight: normal;
+  }
+  & strong {
+    color: var(--text-purple-c-dark);
+  }
+}
+#box1, #box2, #box5 {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 3px solid var(--border-box-primary-c-dark);
+  background-color: var(--fondo-box-primary-c-dark);
+}
+#box3, #box4 {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 3px solid var(--border-box-secodary-c-dark);
+  background-color: var(--fondo-box-secondary-c-dark);
+}
+#box1 {
+  grid-area: box1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#box2 {
+  grid-area: box2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+#box3 {
+  grid-area: box3;
+}
+#box4 {
+  grid-area: box4;
+}
+#box5 {
+  grid-area: box5;
+}
+@media only screen and (max-width: 980px) {
+  #box3 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+.content-info-keys-grid {
+  min-width: 20rem;
+}
+}
+@media only screen and (max-width: 440px) {
+  .content-info-keys-grid {
+    min-width: auto;
+    padding: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, min-content);
+    grid-template-areas: 
+    "box1 box1"
+    "box2 box2"
+    "box3 box3"
+    "box4 box4"
+    "box5 box5"
+    ;
+    & #box1, #box2, #box3, #box4, #box5 {
+      padding: 0.5rem;
+    }
+  }
+  #box1 {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+</style>

@@ -1,0 +1,58 @@
+---
+import ButtonLink from "../otros/buttonLink.astro";
+import TitleSection from "../otros/titleSection.astro";
+
+
+---
+
+<section class="content-info">
+  <TitleSection nameTitle="Sobre Mi" addLine="underline" typeTarget="h1"/>
+  <article>
+    <p>
+      Mi nombre es Josue Huayapa, Estudio la carrera <strong>“informática y desarrollo web”</strong> y disfruto crear sitios web, brindando una buena experiencia en el usuario
+    </p>
+    <p>
+      Empecé a programar desde que tenia 17 años, <strong>aprendiendo de forma autodidacta</strong> y actualmente <strong>estoy ejerciendo una carrera</strong> para integrarme mas en en este mundo de la programación.
+    </p>
+    <p>
+      Soy alguien <strong>responsable y comprometido</strong>, que me gusta <strong>contribuir de manera beneficiosa a mi equipo</strong>.
+    </p>
+  </article>
+  <div> 
+    <ButtonLink nameBtn="Contactame" hrefBtn="contactame" styleBtn="blue" _blank="false" formBtn='Section'  />
+  </div>
+</section>
+
+<style>
+/* CONTENEDORES  */
+.content-info {
+  max-width: 30rem;
+  padding: 1rem;
+  & article {
+    animation: animationOpacity 2s ease;
+  }
+  & p {
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    color: var(--text-secondary-c-dark);
+    & strong {
+      color: var(--text-important-c-dark);
+    }
+  }
+  & div {
+    animation: animationTop 0.5s ease-in-out;
+  }
+}
+/* version mobile */
+@media only screen and (max-width: 870px) {
+  .content-info {
+    max-width: 38rem;
+    text-align: center;
+    padding: 0.5rem;
+    & div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+</style>

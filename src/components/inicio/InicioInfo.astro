@@ -1,0 +1,82 @@
+---
+import ButtonLink from "../otros/buttonLink.astro";
+import TitleSection from "../otros/titleSection.astro";
+---
+
+<section class="content-info">
+  <h2>Josue Huayapa</h2>
+  <TitleSection nameTitle="Desarrollador Web" addLine="none" typeTarget="h1"/>
+  <p>
+    Conocimiento del frontEnd dando buena experiencia de usuario. 
+    Si quieres contactarme estare encantado de trabajar con ustedes.
+  </p>
+  <div>
+		<ButtonLink hrefBtn="contactame" nameBtn="Contactame" styleBtn="blue" _blank="false" formBtn='Section'/>
+		<ButtonLink hrefBtn="./public/CV/INFORMEDEPRÁCTICA-3-huayapa.pdf" nameBtn="Visualizar CV" styleBtn="purple" _blank="true" formBtn='Section'/>
+  </div>
+  <a href="proyectos" class="enlace">Puedes visitar mis proyectos aqui</a>
+</section>
+
+<style>
+.content-info {
+	max-width: 30rem;
+	letter-spacing: 1.4px;
+	padding: 1rem;
+	& h2, p {
+		width: 100%;
+	}
+	& h2 {
+		margin: 0;
+		font-size: clamp(1.4rem, 2vw, 3.5rem);
+		font-weight: normal;
+		color: var(--text-secondary-c-dark);
+		animation: animationRightSection 0.5s ease-in-out;
+	}
+	& p {
+		font-size: clamp(0.8rem, 2vw, 1.4rem);
+		color: var(--text-secondary-c-dark);
+		animation: animationOpacity 1s ease;
+	}
+	& div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		align-items: center;
+	}
+	& .enlace {
+		display: block;
+		margin-top: 1rem;
+		color: var(--text-link-alt-c-dark);
+		font-size: clamp(0.8rem, 2vw, 1.3rem);
+		transition: all 0.3s ease;
+		animation: animationTop 1s ease;
+		&:hover {
+			color: #ffffffe8;
+			text-shadow: 4px 4px 6px #ffffff50;
+		}
+	}
+}
+
+/* version mobile */
+@media only screen and (max-width: 660px) {
+.content-info {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  & div {
+    justify-content: center;
+  }
+}
+}
+
+@media only screen and (max-width: 328px) {
+.content-info div {
+  flex-wrap: wrap;
+  & a, button {
+    max-width: none;
+    width: 100%;
+  }
+}
+}
+</style>
