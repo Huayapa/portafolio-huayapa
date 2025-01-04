@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
 
-import vercel from "@astrojs/vercel";
+import vercelServerless from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,5 +22,11 @@ export default defineConfig({
   },
 
   output: "static",
-  adapter: vercel(),
+  adapter: vercelServerless({
+    edgeMiddleware: true,
+    webAnalytics: {
+      enabled: true,
+    },
+    maxDuration: 8,
+  }),
 });

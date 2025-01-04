@@ -75,6 +75,7 @@ if (Astro.request.method === "POST") {
     }
   } catch (error) {
     if (error instanceof Error) {
+      isMessage = error;
       console.error(error.message);
     }
   }
