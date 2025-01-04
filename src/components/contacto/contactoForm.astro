@@ -2,7 +2,7 @@
 import {isValidEmail, isValidPhone} from "../../pages/service/validators"
 import Modal from "../otros/modal.astro";
 const domain = "https://portafolio-huayapa.vercel.app/" 
-export const prerender = false
+// export const prerender = false
 let isMessage = null;
 const errors = { nameFull: "", tel: "", email: "" , message: ""};
 if (Astro.request.method === "POST") {
@@ -54,7 +54,7 @@ if (Astro.request.method === "POST") {
     if (!hasErrors) { 
       // Codigo cuando todo haya validado correctamente
       try {
-        const rest = await fetch(`${domain}/service/api/sendEmail.json`, {
+        const rest = await fetch(`${domain}/api/sendEmail.json`, {
           method: "POST",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({ //DATOS QUE SE ENVIARAN

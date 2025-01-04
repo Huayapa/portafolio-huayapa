@@ -16,11 +16,11 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/contactame\\/?$",
+			"src": "^\\/api\\/sendEmail\\.json\\/?$",
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/service\\/api\\/sendEmail\\.json\\/?$",
+			"src": "^\\/contactame\\/?$",
 			"dest": "_render"
 		},
 		{

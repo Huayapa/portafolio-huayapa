@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-export { renderers } from '../../../renderers.mjs';
+export { renderers } from '../../renderers.mjs';
 
 const resend = new Resend("re_TsCipTJn_LVdEDRvDhQ64cA1J7ZMr4S6j");
 const prerender = false;
