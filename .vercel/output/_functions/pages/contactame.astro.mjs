@@ -19,7 +19,6 @@ const $$Astro$1 = createAstro();
 const $$ContactoForm = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$ContactoForm;
-  const domain = "https://portafolio-huayapa.vercel.app/";
   let isMessage = null;
   const errors = { nameFull: "", tel: "", email: "", message: "" };
   if (Astro2.request.method === "POST") {
@@ -59,7 +58,7 @@ const $$ContactoForm = createComponent(async ($$result, $$props, $$slots) => {
       const hasErrors = Object.values(errors).some((msg) => msg);
       if (!hasErrors) {
         try {
-          const rest = await fetch(`${domain}/service/api/sendEmail.json`, {
+          const rest = await fetch(`https://portafolio-huayapa.vercel.app/service/api/sendEmail.json`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

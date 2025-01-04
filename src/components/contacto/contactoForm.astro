@@ -54,7 +54,7 @@ if (Astro.request.method === "POST") {
     if (!hasErrors) { 
       // Codigo cuando todo haya validado correctamente
       try {
-        const rest = await fetch(`${domain}/service/api/sendEmail.json`, {
+        const rest = await fetch(`https://portafolio-huayapa.vercel.app/service/api/sendEmail.json`, {
           method: "POST",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({ //DATOS QUE SE ENVIARAN
