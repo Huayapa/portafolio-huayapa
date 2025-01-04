@@ -1,4 +1,4 @@
-import { c as createComponent, r as renderTemplate, a as addAttribute, f as renderScript, b as createAstro, m as maybeRenderHead, e as renderComponent, d as renderTransition, k as renderHead, l as renderSlot } from './astro/server_Bd4Pemvs.mjs';
+import { c as createComponent, r as renderTemplate, a as addAttribute, j as renderScript, b as createAstro, m as maybeRenderHead, e as renderComponent, d as renderTransition, k as renderHead, l as renderSlot } from './astro/server_BOWVjJjY.mjs';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                              */
@@ -34,10 +34,10 @@ var _a;
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   const rutas = [
     { name: "Inicio", ruta: "/" },
-    { name: "Sobre mi", ruta: "sobremi" },
-    { name: "Proyectos", ruta: "proyectos" },
-    { name: "Habilidades", ruta: "habilidades" },
-    { name: "Contactame", ruta: "contactame" }
+    { name: "Sobre mi", ruta: "/sobremi" },
+    { name: "Proyectos", ruta: "/proyectos" },
+    { name: "Habilidades", ruta: "/habilidades" },
+    { name: "Contactame", ruta: "/contactame" }
   ];
   return renderTemplate(_a || (_a = __template(["", "<header data-astro-cid-pwmmw5ba> <!-- LOGO PRINCIPAL --> ", ' <!-- BARRA DE NAVEGACION --> <nav id="menu-navigation" data-astro-cid-pwmmw5ba', "> ", ' </nav> <!-- SECCION DE MIS REDES Y EL BOTON DEL MENU MOBILE --> <article class="section-left" data-astro-cid-pwmmw5ba> ', ' <button id="btn-menu" data-astro-cid-pwmmw5ba> <svg width="40" height="40" viewBox="0 0 100 100" data-astro-cid-pwmmw5ba> <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" data-astro-cid-pwmmw5ba></path> <path class="line line2" d="M 20,50 H 80" data-astro-cid-pwmmw5ba></path> <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" data-astro-cid-pwmmw5ba></path> </svg> </button> </article> </header> <script>\n    // DESPLEGAR Y OCULTAR EL MENU DE NAVEGACION MOBILE\n    document.addEventListener("astro:page-load", () => {\n      let $btnMenu = document.getElementById("btn-menu"),\n        $navMenu = document.getElementById("menu-navigation");\n      $btnMenu?.addEventListener("click", () => {\n        $btnMenu?.classList.toggle("activebtn");\n        $navMenu?.classList.toggle("activebtn");\n      });\n    })\n\n<\/script> '])), maybeRenderHead(), renderComponent($$result, "HeaderLogo", $$HeaderLogo, { "data-astro-cid-pwmmw5ba": true }), addAttribute(renderTransition($$result, "6hbdejkg", "", "hero"), "data-astro-transition-scope"), rutas.map(({ name, ruta }) => renderTemplate`${renderComponent($$result, "HeaderBtn", $$HeaderBtn, { "hrefName": ruta, "name": name, "data-astro-cid-pwmmw5ba": true })}`), renderComponent($$result, "HeaderRedes", $$HeaderRedes, { "data-astro-cid-pwmmw5ba": true }));
 }, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/header/Header.astro", "self");

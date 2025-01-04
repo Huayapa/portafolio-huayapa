@@ -2,7 +2,7 @@ import type {APIRoute} from "astro"
 import { Resend } from "resend";
 // LLAVE
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
-export const prerender = false
+// export const prerender = false
 // PETICION
 export const POST:APIRoute = async (response) => {
   // Datos que se tomaran por POST del contacto

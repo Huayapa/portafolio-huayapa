@@ -53,7 +53,7 @@ const rutaImg = "";
   </defs>
 </svg>
 
-<script>
+<script is:inline>
   document.addEventListener("astro:page-load", () => {
     // Agregar imagen alterna si no tiene o no funciona la imagen
     const $imageSvg = document.getElementById("image0_64_303");
@@ -92,7 +92,7 @@ const rutaImg = "";
       transform:
         perspective(800px)
         rotateY(-10deg)
-        translateY(-50px)
+        translateY(-10px)
         rotateX(10deg)
         scale(1);
       opacity: 1;
