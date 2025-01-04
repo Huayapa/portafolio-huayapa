@@ -1,96 +1,9 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, f as renderScript, b as createAstro, e as renderComponent, u as unescapeHTML, F as Fragment } from '../chunks/astro/server_Bd4Pemvs.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, e as renderComponent, b as createAstro, u as unescapeHTML, F as Fragment } from '../chunks/astro/server_Bd4Pemvs.mjs';
 import 'kleur/colors';
-import { i as isValidPhone, a as isValidEmail } from '../chunks/validators_8VL1N_m_.mjs';
-import 'clsx';
-/* empty css                                      */
 import { $ as $$TitleSection } from '../chunks/titleSection_DrNwbvUg.mjs';
+/* empty css                                      */
 import { $ as $$Layout } from '../chunks/Layout_-h10wT1q.mjs';
 export { renderers } from '../renderers.mjs';
-
-const $$Astro$2 = createAstro();
-const $$Modal = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
-  Astro2.self = $$Modal;
-  const { title, descript, isSuccess = "false" } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<dialog${addAttribute("modal-message", "class")}${addAttribute(isSuccess, "data-isSuccess")} data-astro-cid-2zd6jnmd> <article data-astro-cid-2zd6jnmd> <div class="section-img" data-astro-cid-2zd6jnmd> <canvas id="dotlottie-canvas" style="width: 5rem; height:5rem;" data-astro-cid-2zd6jnmd></canvas> </div> <div class="section-info" data-astro-cid-2zd6jnmd> <h3 data-astro-cid-2zd6jnmd>${title}</h3> <p data-astro-cid-2zd6jnmd>${descript}</p> </div> </article> <button onclick="this.parentElement.close()" data-astro-cid-2zd6jnmd>X</button> </dialog> ${renderScript($$result, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/otros/modal.astro?astro&type=script&index=0&lang.ts")} `;
-}, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/otros/modal.astro", void 0);
-
-const $$Astro$1 = createAstro();
-const $$ContactoForm = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$ContactoForm;
-  let isMessage = null;
-  const errors = { nameFull: "", tel: "", email: "", message: "" };
-  if (Astro2.request.method === "POST") {
-    try {
-      const data = await Astro2.request.formData();
-      const nameFull = data.get("nameComplete");
-      const tel = data.get("telPhone");
-      const email = data.get("email");
-      const message = data.get("message");
-      let fecha = (/* @__PURE__ */ new Date()).toLocaleDateString("es-MX", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour12: true,
-        hour: "numeric",
-        minute: "numeric"
-      });
-      if (typeof nameFull !== "string" || nameFull.length < 1) {
-        errors.nameFull += "Por favor, ingrese tu nombre completo.";
-      }
-      if (typeof nameFull !== "string" || nameFull.length > 50) {
-        errors.nameFull += "El numero de caracteres fue execedido (50).";
-      }
-      if (typeof tel !== "string" || tel.length < 10 || !isValidPhone(tel)) {
-        errors.tel += "Numero telefonico no reconocido.";
-      }
-      if (typeof email !== "string" || !isValidEmail(email)) {
-        errors.email += "Correo no valido.";
-      }
-      if (typeof message !== "string" || message.length < 1) {
-        errors.message += "Ingrese un mensaje.";
-      }
-      if (typeof message !== "string" || message.length > 300) {
-        errors.message += "Limite de 300 caracteres exedidos";
-      }
-      const hasErrors = Object.values(errors).some((msg) => msg);
-      if (!hasErrors) {
-        try {
-          const rest = await fetch(`https://portafolio-huayapa.vercel.app/service/api/sendEmail.json`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              //DATOS QUE SE ENVIARAN
-              name: nameFull,
-              phone: tel,
-              email,
-              descript: message,
-              date: fecha
-            })
-          });
-          const data2 = await rest.json();
-          isMessage = data2;
-          console.log(data2);
-        } catch (error) {
-          isMessage = error;
-          console.log(error);
-        }
-      }
-    } catch (error) {
-      if (error instanceof Error) {
-        isMessage = error;
-        console.error(error.message);
-      }
-    }
-  }
-  return renderTemplate`${maybeRenderHead()}<section class="content_form" data-astro-cid-krm7utza> <h2 data-astro-cid-krm7utza>Trabajemos Juntos</h2> <form method="post" id="form-contact" data-astro-cid-krm7utza> <label data-astro-cid-krm7utza>Nombre Completo
-<input type="text" name="nameComplete" maxlength="50" data-astro-cid-krm7utza> ${errors.nameFull && renderTemplate`<span data-astro-cid-krm7utza>${errors.nameFull}</span>`} </label> <div class="form-column-content" data-astro-cid-krm7utza> <label data-astro-cid-krm7utza>Numero Telefonico
-<input type="tel" name="telPhone" placeholder="+00-000000000" maxlength="15" data-astro-cid-krm7utza> ${errors.tel && renderTemplate`<span data-astro-cid-krm7utza>${errors.tel}</span>`} </label> <label data-astro-cid-krm7utza>Correo Electronico
-<input type="text" name="email" maxlength="40" data-astro-cid-krm7utza> ${errors.email && renderTemplate`<span data-astro-cid-krm7utza>${errors.email}</span>`} </label> </div> <label data-astro-cid-krm7utza>Mensaje
-<textarea name="message" maxlength="300" data-astro-cid-krm7utza></textarea> ${errors.message && renderTemplate`<span data-astro-cid-krm7utza>${errors.message}</span>`} </label> <div class="align-item" data-astro-cid-krm7utza> <button data-astro-cid-krm7utza>Enviar Mensaje</button> </div> </form> </section> ${isMessage?.success === true && renderTemplate`${renderComponent($$result, "Modal", $$Modal, { "title": "Enviado correctamente", "descript": isMessage.message, "isSuccess": "true", "data-astro-cid-krm7utza": true })}`} ${isMessage?.success === false && renderTemplate`${renderComponent($$result, "Modal", $$Modal, { "title": "Ocurrio un problema", "descript": isMessage.message, "isSuccess": "false", "data-astro-cid-krm7utza": true })}`} `;
-}, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/contacto/contactoForm.astro", void 0);
 
 const $$Astro = createAstro();
 const $$ContactoContentInfo = createComponent(($$result, $$props, $$slots) => {
@@ -125,7 +38,7 @@ const $$ContactoList = createComponent(($$result, $$props, $$slots) => {
 
 const prerender = false;
 const $$Contactame = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Contacto", "data-astro-cid-e7jrv5jk": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="main-contactame" data-astro-cid-e7jrv5jk> <article class="inicio-formasDeContacto" data-astro-cid-e7jrv5jk> ${renderComponent($$result2, "ContactoList", $$ContactoList, { "data-astro-cid-e7jrv5jk": true })} ${renderComponent($$result2, "ContactoForm", $$ContactoForm, { "data-astro-cid-e7jrv5jk": true })} </article> </main> ` })} `;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Contacto", "data-astro-cid-e7jrv5jk": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="main-contactame" data-astro-cid-e7jrv5jk> <article class="inicio-formasDeContacto" data-astro-cid-e7jrv5jk> ${renderComponent($$result2, "ContactoList", $$ContactoList, { "data-astro-cid-e7jrv5jk": true })} <!-- <ContactoForm /> --> </article> </main> ` })} `;
 }, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/pages/contactame.astro", void 0);
 
 const $$file = "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/pages/contactame.astro";
