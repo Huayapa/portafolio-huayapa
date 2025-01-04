@@ -16,10 +16,6 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/contactame\\/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^\\/service\\/api\\/sendEmail\\.json\\/?$",
 			"dest": "_render"
 		},
