@@ -15,7 +15,7 @@ export const categorySchema = z.union([
 export const proyectDataSchema = z.object({
   id: z.number(),
   name: z.string(),
-  image: z.string(),
+  image: z.string().nullable(),
   descript: z.string(),
   categorys: z.array(categorySchema),
   linkPage: z.string().nullable(),
