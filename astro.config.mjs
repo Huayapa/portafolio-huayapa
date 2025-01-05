@@ -6,7 +6,6 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   base: "/",
-
   env: {
     schema: {
       RESEND_API_KEY: envField.string({
@@ -20,14 +19,14 @@ export default defineConfig({
       }),
     }
   },
-
-  output: "server",
-  adapter: vercel(),
-  // {
-  //   edgeMiddleware: true,
-  //   webAnalytics: {
-  //     enabled: true,
-  //   },
-  //   maxDuration: 8,
-  // }
+  output: "static",
+  adapter: vercel(
+    {
+      edgeMiddleware: true,
+      webAnalytics: {
+        enabled: true,
+      },
+      maxDuration: 8,
+    }
+  ),
 });

@@ -19,7 +19,7 @@ const $$Astro$1 = createAstro();
 const $$ContactoForm = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$ContactoForm;
-  const domain = "https://portafolio-huayapa.vercel.app/";
+  const domain = "https://portafolio-huayapa.vercel.app";
   let isMessage = null;
   const errors = { nameFull: "", tel: "", email: "", message: "" };
   if (Astro2.request.method === "POST") {
