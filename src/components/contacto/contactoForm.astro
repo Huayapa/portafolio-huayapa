@@ -1,7 +1,7 @@
 ---
 import {isValidEmail, isValidPhone} from "../../pages/service/validators"
 import Modal from "../otros/modal.astro";
-const domain = "https://portafolio-huayapa.vercel.app/" 
+const domain = "https://portafolio-huayapa.vercel.app/" ;
 // export const prerender = false
 let isMessage = null;
 const errors = { nameFull: "", tel: "", email: "" , message: ""};
@@ -67,10 +67,10 @@ if (Astro.request.method === "POST") {
         })
         const data = await rest.json();
         isMessage = data;
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         isMessage = error;
-        console.log(error);
+        // console.log(error);
       }
     }
   } catch (error) {

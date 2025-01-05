@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InicioInfo from '../components/inicio/InicioInfo.astro';
+import InicioView from '../components/inicio/InicioView.astro';
+
+---
+
+<Layout title="Inicio">
+	<main class="main-inicio">
+		<article class="inicio-presentacion">
+			<InicioInfo/>
+			<InicioView />
+		</article>
+	</main>
+</Layout>
+<style>
+/* 
+ESTILOS GENERALES DE LA ETIQUETA PRINCIPAL
+*/
+.main-inicio {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 
+ESTILOS PARA LA SECCION DE PRESENTACION
+*/
+.inicio-presentacion {
+	max-width: 120rem;
+	width: 100%;
+	min-height: 58rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+@media only screen and (max-width: 980px) {
+	.main-inicio {
+		min-height: 54rem;
+	}
+	.inicio-presentacion {
+		min-height: 60rem;
+	}
+}
+/* version mobile */
+@media only screen and (max-width: 660px) {
+	.main-inicio {
+		min-height: 20rem;
+	}
+	.inicio-presentacion {
+		max-width: 100%;
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0;
+		min-height: 44rem;
+	}
+}
+
+</style>

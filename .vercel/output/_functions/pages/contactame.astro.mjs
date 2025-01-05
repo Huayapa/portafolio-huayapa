@@ -73,10 +73,8 @@ const $$ContactoForm = createComponent(async ($$result, $$props, $$slots) => {
           });
           const data2 = await rest.json();
           isMessage = data2;
-          console.log(data2);
         } catch (error) {
           isMessage = error;
-          console.log(error);
         }
       }
     } catch (error) {
