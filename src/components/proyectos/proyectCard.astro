@@ -8,7 +8,7 @@ interface Props {
 }
 
 const {dataCard} = Astro.props;
-const {id, name, image = "default.jpg", descript, linkPage, categorys, linkGitHub} = dataCard;
+const {id, name, image = "imageDefault.jpg", descript, linkPage, categorys, linkGitHub} = dataCard;
 
 const imagecard = await getImage({
 	src: `/images/proyects/${image}`,
