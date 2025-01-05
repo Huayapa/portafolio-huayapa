@@ -37,7 +37,7 @@
   .content-info-keys-grid {
   max-width: 38rem;
   width: 100%;
-  min-width: 30rem;
+  /* min-width: 30rem; */
   padding: 0.5rem;
   display: grid;
   grid-template-columns: minmax(6rem, 14rem) 1fr;
@@ -106,6 +106,9 @@
   grid-area: box5;
 }
 @media only screen and (max-width: 980px) {
+  .content-info-keys-grid  {
+    animation: animationTop 1s ease;
+  }
   #box3 {
     display: flex;
     align-items: center;
