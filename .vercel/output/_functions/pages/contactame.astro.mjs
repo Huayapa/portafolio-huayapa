@@ -122,7 +122,6 @@ const $$ContactoList = createComponent(($$result, $$props, $$slots) => {
     </svg>`, ",": true, "titleContent": "GitHub", "contentText": "huayapa", "activeLink": "true", "hrefLink": "https://github.com/Huayapa", "data-astro-cid-nyjmgcpy": true })} </article> </section> `;
 }, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/contacto/contactoList.astro", void 0);
 
-const prerender = false;
 const $$Contactame = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Contacto", "data-astro-cid-e7jrv5jk": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="main-contactame" data-astro-cid-e7jrv5jk> <article class="inicio-formasDeContacto" data-astro-cid-e7jrv5jk> ${renderComponent($$result2, "ContactoList", $$ContactoList, { "data-astro-cid-e7jrv5jk": true })} ${renderComponent($$result2, "ContactoForm", $$ContactoForm, { "data-astro-cid-e7jrv5jk": true })} </article> </main> ` })} `;
 }, "D:/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/pages/contactame.astro", void 0);
@@ -134,7 +133,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$Contactame,
   file: $$file,
-  prerender,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
