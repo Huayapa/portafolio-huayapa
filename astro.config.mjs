@@ -22,7 +22,6 @@ export default defineConfig({
   },
 
   output: "server",
-  // @ts-ignore
   adapter: vercel(),
   // {
   //   edgeMiddleware: true,
