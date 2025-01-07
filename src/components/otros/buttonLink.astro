@@ -17,11 +17,12 @@ const {hrefBtn, nameBtn, styleBtn, _blank, formBtn} = Astro.props;
   href={hrefBtn}
   class:list={[{
     "sectionStyle": formBtn == "Section",
-    "cardStyle": formBtn == "Card" 
+    "cardStyle": formBtn == "Card",
+    "disabled": hrefBtn == "#"
   }]}
   class={"color-"+styleBtn}
   target={_blank === "true" ? '_blank' : '_self'}>
-  {nameBtn}
+  {hrefBtn != "#" ? nameBtn : "No disponible"}
 </a>
 
 
@@ -57,6 +58,17 @@ a.cardStyle {
   border-radius: 5px;
   padding: 0.3rem 0rem;
 }
+
+a.disabled {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+  &:hover {
+    box-shadow: none;
+    background-color: unset;
+  }
+}
+
 a.color-blue {
   border: 2px solid var(--border-btn-blue-c-dark);
   &:hover {

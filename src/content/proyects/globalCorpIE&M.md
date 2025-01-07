@@ -8,6 +8,6 @@ categorys:
   - HTML
   - JS
   - CSS
-linkPage: https://globalCorpInternationalE&M.com
+linkPage: null
 linkGitHub: null
 ---

@@ -7,6 +7,6 @@ categorys:
   - HTML
   - JS
   - CSS
-linkPage: https://github.sistema.com
-linkGitHub: https://pagina.com
+linkPage: null
+linkGitHub: https://github.com/Huayapa/proyectsenati/tree/javaScript/sistemaVentasInventarioJS
 ---
