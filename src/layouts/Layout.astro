@@ -16,10 +16,30 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="description" content="Bienvenido a mi portafolio :D." />
 		<meta name="generator" content={Astro.generator} />
+		<!-- SEO -->
 		<title>{title}</title>
+		<meta name="description" content="Portafolio web de Josue Huayapa para presentarme y demostrar mis proyectos." />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/favicon.svg">
+		<meta name="robots" content="index, follow" />
+		<link rel='canonical' href='https://portafolio-huayapa.vercel.app/'/>
+		<meta name='theme-color' content='#030211'>
+		<meta name="author" content="Josue Andres Huayapa Julca">
+		<!-- Open Graph -->
+		<meta property="og:title" content="Portafolio Huayapa" />
+		<meta property="og:description" content="Portafolio web de Josue Huayapa para presentarme y demostrar mis proyectos." />
+		<meta property="og:image" content="https://portafolio-huayapa.vercel.app/images/readmePreviewPage.jpg" />
+		<meta property="og:url" content="https://portafolio-huayapa.vercel.app/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Huayapa Portafolio" />
+		<meta property="og:locale" content="es_ES" />
+		<!-- Twitter (X) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Portafolio Huayapa" />
+		<meta name="twitter:description" content="Portafolio web de Josue Huayapa para presentarme y demostrar mis proyectos." />
+		<meta name="twitter:image" content="https://portafolio-huayapa.vercel.app/images/readmePreviewPage.jpg" />
+		<meta name="twitter:url" content="https://portafolio-huayapa.vercel.app/" />
 		<ClientRouter/>
 		<Analytics />
 	</head>
