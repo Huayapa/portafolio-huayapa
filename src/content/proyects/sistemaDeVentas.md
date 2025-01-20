@@ -8,5 +8,5 @@ categorys:
   - JS
   - CSS
 linkPage: https://huayapa.github.io/ProyectsPortafolio/SistemaDeVenta/index.html
-linkGitHub: https://github.com/Huayapa/proyectsenati/tree/javaScript/sistemaVentasInventarioJS
+linkGitHub: https://github.com/Huayapa/ProyectsPortafolio/tree/main/SistemaDeVenta
 ---
