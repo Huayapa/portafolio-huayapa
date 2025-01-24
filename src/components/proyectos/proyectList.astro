@@ -12,7 +12,7 @@ interface Props {
   MinlimitCards: string;
 }
 const {nameList,MinlimitCards, MaxlimitCards} = Astro.props;
-const filterProyects = proyectos.filter(proyecto => proyecto.data.id < Number(MaxlimitCards) + 1 && proyecto.data.id > Number(MinlimitCards))
+const filterProyects = proyectos.filter(proyecto => proyecto.data.id < Number(MaxlimitCards) + 1 && proyecto.data.id > Number(MinlimitCards));
 ---
 
 <article class="proyectListContent">
@@ -30,6 +30,7 @@ const filterProyects = proyectos.filter(proyecto => proyecto.data.id < Number(Ma
 					id: proyect.data.id,
 					name: proyect.data.name,
 					descript: proyect.data.descript,
+					isresponsive: proyect.data.isresponsive,
 					image: proyect.data.image ?? "imageDefault.jpg",
 					categorys: proyect.data.categorys,
 					linkPage: proyect.data.linkPage,

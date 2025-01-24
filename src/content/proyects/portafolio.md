@@ -3,6 +3,7 @@ id: 3
 name: Portafolio Personal
 image: portafolio.jpg
 descript: Pagina web para presentarme como programador.
+isresponsive: true
 categorys:
   - Astro
   - HTML

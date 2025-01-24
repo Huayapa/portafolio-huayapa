@@ -17,8 +17,9 @@ export const proyectDataSchema = z.object({
   name: z.string(),
   image: z.string().nullable(),
   descript: z.string(),
+  isresponsive: z.boolean(),
   categorys: z.array(categorySchema),
-  linkPage: z.string().nullable(),
+  linkPage: z.string().nullable(),  
   linkGitHub: z.string().nullable()
 })
 

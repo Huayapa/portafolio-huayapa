@@ -4,6 +4,7 @@ export interface proyectData {
   name: string,
   image: string,
   descript: string,
+  isresponsive: boolean,
   categorys: Array<Category>,
   linkPage: string | null,
   linkGitHub: string | null
