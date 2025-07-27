@@ -9,7 +9,8 @@ export const categorySchema = z.union([
   z.literal("TS"),
   z.literal("MySql"),
   z.literal("Angular"),
-  z.literal("Astro")
+  z.literal("Astro"),
+  z.literal("NodeJS"),
 ])
 
 export const proyectDataSchema = z.object({

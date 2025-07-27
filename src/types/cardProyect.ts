@@ -1,4 +1,4 @@
-export type Category = "JS" | "PHP" | "HTML" | "CSS" | "TS" | "MySql" | "Angular" | "Astro";
+export type Category = "JS" | "PHP" | "HTML" | "CSS" | "TS" | "MySql" | "Angular" | "Astro" | "NodeJS";
 export interface proyectData {
   id: number,
   name: string,
