@@ -4,7 +4,7 @@ import { i as isValidPhone, a as isValidEmail } from '../chunks/validators_8VL1N
 import 'clsx';
 /* empty css                                      */
 import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
-import { $ as $$Layout } from '../chunks/Layout_C2N_QpNT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$2 = createAstro();

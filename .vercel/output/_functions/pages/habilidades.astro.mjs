@@ -4,7 +4,7 @@ import 'clsx';
 /* empty css                                       */
 import { g as getCollection } from '../chunks/_astro_content_B9yFEKyz.mjs';
 import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
-import { $ as $$Layout } from '../chunks/Layout_C2N_QpNT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();
@@ -16,8 +16,8 @@ const $$ListContain = createComponent(($$result, $$props, $$slots) => {
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/otros/listContain.astro", void 0);
 
 const $$HabilidadesBlandas = createComponent(($$result, $$props, $$slots) => {
-  const habilidadesBlandas = ["Compromiso", "Resolver Problemas", "Trabajo en equipo", "Gestion y control del tiempo", "Adaptaci\xF3n a cambios"];
-  return renderTemplate`${maybeRenderHead()}<section class="section-habilidades-blandas" data-astro-cid-vwzzkov6> <h2 data-astro-cid-vwzzkov6>habilidades Blandas</h2> <ul data-astro-cid-vwzzkov6> ${habilidadesBlandas.map((habilidad) => renderTemplate`${renderComponent($$result, "ListContain", $$ListContain, { "name": habilidad, "data-astro-cid-vwzzkov6": true })}`)} </ul> </section> `;
+  const habilidadesBlandas = ["Compromiso", "Resoluci\xF3n de problemas", "Trabajo en equipo", "Gesti\xF3n y control del tiempo", "Adaptaci\xF3n a los cambios"];
+  return renderTemplate`${maybeRenderHead()}<section class="section-habilidades-blandas" data-astro-cid-vwzzkov6> <h2 data-astro-cid-vwzzkov6>Habilidades Blandas</h2> <ul data-astro-cid-vwzzkov6> ${habilidadesBlandas.map((habilidad) => renderTemplate`${renderComponent($$result, "ListContain", $$ListContain, { "name": habilidad, "data-astro-cid-vwzzkov6": true })}`)} </ul> </section> `;
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/habilidades/habilidadesBlandas.astro", void 0);
 
 const $$HabilidadesLayout = createComponent(async ($$result, $$props, $$slots) => {

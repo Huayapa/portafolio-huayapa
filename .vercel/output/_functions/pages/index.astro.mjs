@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, e as renderComponent, a as addAttribute, u as unescapeHTML, F as Fragment } from '../chunks/astro/server_BOWVjJjY.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_C2N_QpNT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
 import { $ as $$ButtonLink } from '../chunks/buttonLink_BfR9aTpu.mjs';
 import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
 /* empty css                                 */
@@ -9,7 +9,7 @@ export { renderers } from '../renderers.mjs';
 
 const $$InicioInfo = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section class="content-info" data-astro-cid-7eantzt3> <h2 data-astro-cid-7eantzt3>Josue Huayapa</h2> ${renderComponent($$result, "TitleSection", $$TitleSection, { "nameTitle": "Desarrollador Web", "addLine": "none", "typeTarget": "h1", "data-astro-cid-7eantzt3": true })} <p data-astro-cid-7eantzt3>
-Conocimiento del frontEnd dando buena experiencia de usuario. 
+Conocimiento para desarrollar una aplicación web completa, adaptandome a distintos cambios.
     Si quieres contactarme estare encantado de trabajar con ustedes.
 </p> <div data-astro-cid-7eantzt3> ${renderComponent($$result, "ButtonLink", $$ButtonLink, { "hrefBtn": "contactame", "nameBtn": "Contactame", "styleBtn": "blue", "_blank": "false", "formBtn": "Section", "data-astro-cid-7eantzt3": true })} ${renderComponent($$result, "ButtonLink", $$ButtonLink, { "hrefBtn": "/CV/curriculum-huayapa.pdf", "nameBtn": "Visualizar CV", "styleBtn": "purple", "_blank": "true", "formBtn": "Section", "data-astro-cid-7eantzt3": true })} </div> <a href="proyectos" class="enlace" data-astro-cid-7eantzt3>Puedes visitar mis proyectos aqui</a> </section> `;
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/inicio/InicioInfo.astro", void 0);

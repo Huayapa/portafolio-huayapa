@@ -6,7 +6,7 @@ import 'clsx';
 /* empty css                                     */
 import { c as getImage, $ as $$Image } from '../chunks/_astro_assets_w-Q76edc.mjs';
 import { g as getCollection } from '../chunks/_astro_content_B9yFEKyz.mjs';
-import { $ as $$Layout } from '../chunks/Layout_C2N_QpNT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$2 = createAstro();

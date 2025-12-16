@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, e as renderComponent } from '../chunks/astro/server_BOWVjJjY.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_C2N_QpNT.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
 import { $ as $$ButtonLink } from '../chunks/buttonLink_BfR9aTpu.mjs';
 import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
 /* empty css                                   */
@@ -9,11 +9,11 @@ export { renderers } from '../renderers.mjs';
 
 const $$SobremiInfo = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section class="content-info" data-astro-cid-tunre4sm> ${renderComponent($$result, "TitleSection", $$TitleSection, { "nameTitle": "Sobre Mi", "addLine": "underline", "typeTarget": "h1", "data-astro-cid-tunre4sm": true })} <article data-astro-cid-tunre4sm> <p data-astro-cid-tunre4sm>
-Mi nombre es Josue Huayapa, Estudio la carrera <strong data-astro-cid-tunre4sm>“informática y desarrollo web”</strong> y disfruto crear sitios web, brindando una buena experiencia en el usuario
+Mi nombre es Josue Huayapa, Termine la carrera <strong data-astro-cid-tunre4sm>“informática y desarrollo web”</strong> y disfruto crear sitios web, brindando una buena experiencia en el usuario.
 </p> <p data-astro-cid-tunre4sm>
 Empecé a programar desde que tenia 17 años, <strong data-astro-cid-tunre4sm>aprendiendo de forma autodidacta</strong> y actualmente <strong data-astro-cid-tunre4sm>he terminado mi carrera</strong> para integrarme mas en en este mundo de la programación.
 </p> <p data-astro-cid-tunre4sm>
-Soy alguien <strong data-astro-cid-tunre4sm>responsable y comprometido</strong>, que me gusta <strong data-astro-cid-tunre4sm>contribuir de manera beneficiosa a mi equipo</strong>.
+Soy alguien <strong data-astro-cid-tunre4sm>responsable y comprometido</strong>, que me gusta <strong data-astro-cid-tunre4sm>contribuir de manera beneficiosa a mi equipo y adaptarme a distintos cambios</strong>.
 </p> </article> <div data-astro-cid-tunre4sm> ${renderComponent($$result, "ButtonLink", $$ButtonLink, { "nameBtn": "Contactame", "hrefBtn": "contactame", "styleBtn": "blue", "_blank": "false", "formBtn": "Section", "data-astro-cid-tunre4sm": true })} </div> </section> `;
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/sobremi/sobremiInfo.astro", void 0);
 
