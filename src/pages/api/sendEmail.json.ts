@@ -1,3 +1,4 @@
+export const runtime = 'nodejs';
 import type {APIRoute} from "astro"
 import { Resend } from "resend";
 // LLAVE
