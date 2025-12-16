@@ -11,6 +11,8 @@ export const categorySchema = z.union([
   z.literal("Angular"),
   z.literal("Astro"),
   z.literal("NodeJS"),
+  z.literal("TailwindCSS"),
+  z.literal("Laravel"),
 ])
 
 export const proyectDataSchema = z.object({
