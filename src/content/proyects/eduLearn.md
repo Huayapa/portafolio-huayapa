@@ -7,6 +7,6 @@ isresponsive: true
 categorys:
   - TailwindCSS
   - Laravel
-linkPage: "https://edulearntest.free.nf/public/?i=1"
+linkPage: null
 linkGitHub: "https://github.com/Huayapa/EduLearn"
 ---
