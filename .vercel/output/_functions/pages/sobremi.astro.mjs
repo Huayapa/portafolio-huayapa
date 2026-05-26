@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, e as renderComponent } from '../chunks/astro/server_BOWVjJjY.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Do34DD0p.mjs';
 import { $ as $$ButtonLink } from '../chunks/buttonLink_BfR9aTpu.mjs';
-import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
+import { $ as $$TitleSection } from '../chunks/titleSection_Dixq56x3.mjs';
 /* empty css                                   */
 import 'clsx';
 export { renderers } from '../renderers.mjs';

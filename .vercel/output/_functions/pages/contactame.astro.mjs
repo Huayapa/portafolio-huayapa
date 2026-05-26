@@ -3,8 +3,8 @@ import 'kleur/colors';
 import { i as isValidPhone, a as isValidEmail } from '../chunks/validators_8VL1N_m_.mjs';
 import 'clsx';
 /* empty css                                      */
-import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
-import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
+import { $ as $$TitleSection } from '../chunks/titleSection_Dixq56x3.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Do34DD0p.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$2 = createAstro();

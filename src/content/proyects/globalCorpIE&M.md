@@ -1,5 +1,5 @@
 ---
-id: 1
+id: 2
 name: Global Corp International E&M
 image: proyectGlobalCorp.jpg
 descript: Pagina web informativa para una empresa sobre la venta y servicio en el rubro hidrocarburo.

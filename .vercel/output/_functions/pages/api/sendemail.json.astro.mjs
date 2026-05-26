@@ -1,7 +1,8 @@
 import { Resend } from 'resend';
 export { renderers } from '../../renderers.mjs';
 
-const resend = new Resend("re_TsCipTJn_LVdEDRvDhQ64cA1J7ZMr4S6j");
+const runtime = "nodejs";
+const resend = new Resend("re_V1kK27e5_F2gCCrccPbHu2rHXJsRur7HD");
 const POST = async (response) => {
   const body = await response.request.json();
   const { name, phone, email, descript, date } = body;
@@ -60,7 +61,8 @@ const POST = async (response) => {
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  POST
+  POST,
+  runtime
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const page = () => _page;

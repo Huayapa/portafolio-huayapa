@@ -1,5 +1,5 @@
 ---
-id: 4
+id: 6
 name: Tienda mueble ficticia
 image: tiendamuebles.jpg
 descript: Maquetacion de una tienda de muebles en grupo. Desarrolle el inicio, productos y ubicación.

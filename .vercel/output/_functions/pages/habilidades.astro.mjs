@@ -2,9 +2,9 @@ import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as c
 import 'kleur/colors';
 import 'clsx';
 /* empty css                                       */
-import { g as getCollection } from '../chunks/_astro_content_B9yFEKyz.mjs';
-import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
-import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
+import { g as getCollection } from '../chunks/_astro_content_TnicZTFn.mjs';
+import { $ as $$TitleSection } from '../chunks/titleSection_Dixq56x3.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Do34DD0p.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();

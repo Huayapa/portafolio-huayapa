@@ -1,12 +1,12 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, b as createAstro, e as renderComponent } from '../chunks/astro/server_BOWVjJjY.mjs';
 import 'kleur/colors';
-import { $ as $$TitleSection } from '../chunks/titleSection_BCjopA19.mjs';
+import { $ as $$TitleSection } from '../chunks/titleSection_Dixq56x3.mjs';
 import { $ as $$ButtonLink } from '../chunks/buttonLink_BfR9aTpu.mjs';
 import 'clsx';
 /* empty css                                     */
 import { c as getImage, $ as $$Image } from '../chunks/_astro_assets_w-Q76edc.mjs';
-import { g as getCollection } from '../chunks/_astro_content_B9yFEKyz.mjs';
-import { $ as $$Layout } from '../chunks/Layout_Dxpr2Ps-.mjs';
+import { g as getCollection } from '../chunks/_astro_content_TnicZTFn.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Do34DD0p.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$2 = createAstro();
@@ -40,7 +40,7 @@ const $$ProyectList = createComponent(async ($$result, $$props, $$slots) => {
   Astro2.self = $$ProyectList;
   const proyectos = await getCollection("proyects");
   const { nameList, MinlimitCards, MaxlimitCards } = Astro2.props;
-  const filterProyects = proyectos.filter((proyecto) => proyecto.data.id < Number(MaxlimitCards) + 1 && proyecto.data.id > Number(MinlimitCards));
+  const filterProyects = proyectos.filter((proyecto) => proyecto.data.id < Number(MaxlimitCards) + 1 && proyecto.data.id > Number(MinlimitCards)).sort((a, b) => a.data.id - b.data.id);
   return renderTemplate`${maybeRenderHead()}<article class="proyectListContent" data-astro-cid-shyujqok> ${renderComponent($$result, "TitleSection", $$TitleSection, { "nameTitle": nameList, "addLine": "underline", "typeTarget": "h2", "data-astro-cid-shyujqok": true })} <section class="listsproyects" data-astro-cid-shyujqok> ${filterProyects.length === 0 && renderTemplate`<div class="isNull" data-astro-cid-shyujqok> <h3 data-astro-cid-shyujqok>Actualmente no hay mas proyectos.</h3> </div>`} ${filterProyects.map((proyect) => {
     const dataInterface = {
       id: proyect.data.id,
@@ -57,11 +57,11 @@ const $$ProyectList = createComponent(async ($$result, $$props, $$slots) => {
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/proyectos/proyectList.astro", void 0);
 
 const $$MisProyectos = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section class="misProyectos" data-astro-cid-bjhoidrb> ${renderComponent($$result, "ProyectList", $$ProyectList, { "nameList": "Proyectos Destacados", "MinlimitCards": "0", "MaxlimitCards": "3", "data-astro-cid-bjhoidrb": true })} <!-- <div>
+  return renderTemplate`${maybeRenderHead()}<section class="misProyectos" data-astro-cid-bjhoidrb> ${renderComponent($$result, "ProyectList", $$ProyectList, { "nameList": "Proyectos Destacados", "MinlimitCards": "0", "MaxlimitCards": "5", "data-astro-cid-bjhoidrb": true })} <!-- <div>
 		<article>
 			<ul>asdsa	</ul>
 		</article>
-	</div> --> ${renderComponent($$result, "ProyectList", $$ProyectList, { "nameList": "Todos los proyectos", "MinlimitCards": "3", "MaxlimitCards": "7", "data-astro-cid-bjhoidrb": true })} </section> `;
+	</div> --> ${renderComponent($$result, "ProyectList", $$ProyectList, { "nameList": "Todos los proyectos", "MinlimitCards": "5", "MaxlimitCards": "8", "data-astro-cid-bjhoidrb": true })} </section> `;
 }, "D:/Dev/ProyectosGenerales/ProyectosPersonales/portafolio-huayapa/src/components/proyectos/misProyectos.astro", void 0);
 
 const $$Proyectos = createComponent(($$result, $$props, $$slots) => {
