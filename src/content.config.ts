@@ -1,4 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 // CONFIGURACION DE LOS PROYECTOS
 export const categorySchema = z.union([
@@ -28,6 +30,7 @@ export const proyectDataSchema = z.object({
 })
 
 const proyects = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/proyects' }),
   schema: proyectDataSchema
 });
 
@@ -47,6 +50,7 @@ export const habilityDataSchema = z.object({
 })
 
 const habilidades = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/habilidades' }),
   schema: habilityDataSchema
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "portafolio-huayapa",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,11 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.0.1",
-    "@lottiefiles/dotlottie-web": "^0.39.0",
-    "@vercel/analytics": "^1.4.1",
-    "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.1.2",
-    "resend": "^4.0.1"
+    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/vercel": "10.0.8",
+    "@lottiefiles/dotlottie-web": "0.74.0",
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
+    "astro": "6.4.6",
+    "resend": "6.12.4"
+  },
+  "overrides": {
+    "esbuild": "0.28.1",
+    "path-to-regexp": "8.4.2"
   }
 }
