@@ -50,7 +50,7 @@ const {svgViewInfo, titleContent, contentText, activeLink , hrefLink} = Astro.pr
     display: flex;
     align-items: center;
     color: var(--text-important-c-dark);
-    transition: all 0.5s ease;
+    transition: scale 0.5s ease, background-color 0.5s ease, filter 0.5s ease;
   }
   a:hover {
     scale: 0.9;
@@ -90,7 +90,6 @@ const {svgViewInfo, titleContent, contentText, activeLink , hrefLink} = Astro.pr
       flex-wrap: wrap;
       justify-content: center;
       min-width: none;
-      transition: all 0.5s ease;
     }
     section {
       max-width: 100%;
