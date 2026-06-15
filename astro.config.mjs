@@ -19,7 +19,7 @@ export default defineConfig({
       }),
     }
   },
-  output: "server",
+  output: "static",
   adapter: vercel(
     {
       edgeMiddleware: true,
@@ -29,4 +29,8 @@ export default defineConfig({
       maxDuration: 8,
     }
   ),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover'
+  }
 });
