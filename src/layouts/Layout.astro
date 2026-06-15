@@ -54,6 +54,10 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.15s;
+	}
 	:root {
 		/* COLORES DEL SCROLL */
 		--fondo-scroll-c-dark: #030211;
@@ -196,6 +200,9 @@ html::-webkit-scrollbar-thumb  {
 /*###################################
 ####### ANIMACIONES GLOBALES ######## 
 ###################################*/
+html[data-astro-transition] * {
+	animation: none;
+}
 
 @keyframes animationMoveTopButton {
 	0% {
