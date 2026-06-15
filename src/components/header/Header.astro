@@ -20,7 +20,7 @@ const rutas:Array<RutaNav> = [
   <!-- LOGO PRINCIPAL -->
   <HeaderLogo />
   <!-- BARRA DE NAVEGACION -->
-  <nav id="menu-navigation" transition:name="hero">
+  <nav id="menu-navigation">
     {
       rutas.map(({name, ruta}) => (
         <HeaderBtn hrefName={ruta} name={name}/>
