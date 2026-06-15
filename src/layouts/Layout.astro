@@ -46,10 +46,10 @@ const { title } = Astro.props;
 		<SpeedInsights/>
 	</head>
 	<body>
-		<Header />
-		<div class="fondo-dark"></div>
+		<Header transition:persist/>
+		<div class="fondo-dark" transition:persist></div>
 		<slot />
-		<Footer/>
+		<Footer transition:persist/>
 	</body>
 </html>
 
