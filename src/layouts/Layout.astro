@@ -46,29 +46,14 @@ const { title } = Astro.props;
 		<SpeedInsights/>
 	</head>
 	<body>
-		<Header transition:persist/>
-		<div class="fondo-dark" transition:persist></div>
+		<Header/>
+		<div class="fondo-dark"></div>
 		<slot />
-		<Footer transition:persist/>
+		<Footer/>
 	</body>
 </html>
 
 <style is:global>
-	::view-transition-old(root) {
-		animation: fadeOut 0.15s ease forwards;
-	}
-	::view-transition-new(root) {
-		animation: fadeIn 0.15s ease forwards;
-		animation-delay: 0.1s;
-	}
-	@keyframes fadeOut {
-		to { opacity: 0; }
-	}
-
-	@keyframes fadeIn {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
 	:root {
 		/* COLORES DEL SCROLL */
 		--fondo-scroll-c-dark: #030211;
