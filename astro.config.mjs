@@ -26,15 +26,11 @@ export default defineConfig({
       webAnalytics: {
         enabled: true,
       },
-      maxDuration: 60,
+      maxDuration: 8,
     }
   ),
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: false,
     defaultStrategy: 'hover'
   },
-  trailingSlash: 'ignore', 
-  build: {
-    format: 'directory'
-  }
 });

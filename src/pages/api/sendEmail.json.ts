@@ -39,8 +39,8 @@ export const POST:APIRoute = async ({request}) => {
     // Datos que se enviaran al resend
     const { data, error } = await resend.emails.send({
       from, 
-      to: 'contactohuayapa@gmail.com', 
-      subject: name, 
+      to: ['huayapajosue0@gmail.com'],
+      subject: name,
       html: html
     });
     if(error) {
