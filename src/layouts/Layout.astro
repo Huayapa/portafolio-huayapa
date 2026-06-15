@@ -244,6 +244,19 @@ const { title } = Astro.props;
 			}
 		</style>
 		<ClientRouter/>
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Josue Andres Huayapa Julca",
+			"url": "https://portafolio-huayapa.vercel.app/",
+			"jobTitle": "Web Developer",
+			"description": "Portafolio web de Josue Huayapa para presentarme y demostrar mis proyectos.",
+			"image": "https://portafolio-huayapa.vercel.app/images/readmePreviewPage.jpg",
+			"sameAs": [
+				"https://github.com/Huayapa",
+				"https://pe.linkedin.com/in/josue-huayapa-630a19316"
+			]
+		})} />
 	</head>
 	<body>
 		<Header transition:persist/>

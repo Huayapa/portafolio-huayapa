@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
-
+import sidemap from '@astrojs/sitemap' 
 import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
@@ -33,4 +33,6 @@ export default defineConfig({
     prefetchAll: false,
     defaultStrategy: 'hover'
   },
+  site: 'https://portafolio-huayapa.vercel.app/',
+  integrations: [sidemap()]
 });
