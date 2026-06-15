@@ -30,7 +30,7 @@ export default defineConfig({
     }
   ),
   prefetch: {
-    prefetchAll: false,
+    prefetchAll: true,
     defaultStrategy: 'hover'
   },
   trailingSlash: 'ignore', 
