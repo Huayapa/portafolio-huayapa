@@ -243,27 +243,15 @@ const { title } = Astro.props;
 				}
 			}
 		</style>
-		<script is:inline>
-			document.addEventListener('astro:before-swap', (e) => {
-				const newLinks = [...e.newDocument.querySelectorAll('link[rel="stylesheet"]')];
-				const oldHrefs = new Set([...document.querySelectorAll('link[rel="stylesheet"]')].map(l => l.href));
-				
-				newLinks.forEach(link => {
-					if (!oldHrefs.has(link.href)) {
-						document.head.appendChild(link.cloneNode());
-					}
-				});
-			});
-		</script>
 		<ClientRouter/>
 		<Analytics />
 		<SpeedInsights/>
 	</head>
 	<body>
-		<Header/>
-		<div class="fondo-dark"></div>
+		<Header transition:persist/>
+		<div class="fondo-dark" transition:persist></div>
 		<slot />
-		<Footer/>
+		<Footer transition:persist/>
 	</body>
 </html>
 
