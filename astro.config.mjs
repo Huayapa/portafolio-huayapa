@@ -34,5 +34,5 @@ export default defineConfig({
     defaultStrategy: 'hover'
   },
   site: 'https://portafolio-huayapa.vercel.app/',
-  integrations: [sidemap()]
+  integrations: []
 });
