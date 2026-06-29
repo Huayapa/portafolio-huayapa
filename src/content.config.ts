@@ -16,6 +16,7 @@ export const categorySchema = z.union([
   z.literal("TailwindCSS"),
   z.literal("Laravel"),
   z.literal("Rxjs"),
+  z.literal("Testing"),
 ])
 
 export const proyectDataSchema = z.object({
