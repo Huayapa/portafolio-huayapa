@@ -10,6 +10,7 @@ categorys:
   - NodeJS
   - Rxjs
   - Testing
+  - Docker
 linkPage: "https://peru-store-angular.vercel.app/"
 linkGitHub: "https://github.com/Huayapa/peruStoreAngular/"
 ---
