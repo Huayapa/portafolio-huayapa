@@ -1,5 +1,5 @@
 ---
-id: 5
+id: 6
 name: Polleria ficticia
 image: polleriamaquetacion.jpg
 descript: "Pagina de desarrollo frondEnd de una polleria, incluyendo un Dashboard (user: josue, password: 1234)."

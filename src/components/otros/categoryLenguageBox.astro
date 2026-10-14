@@ -6,7 +6,7 @@ interface Props {
 const {categoria} = Astro.props
 ---
 
-<div class={"style-lenguage "+ "color"+categoria}>
+<div class={"style-lenguage "+ "color"+categoria.replaceAll(" ", "")}>
   <p>
     {categoria}
   </p>
@@ -86,6 +86,18 @@ const {categoria} = Astro.props
     &.colorDocker {
       background-color: var(--fondo-lenguaje-DOCKER);
       border-color: var(--border-lenguaje-DOCKER);
+    }
+    &.colorJava {
+      background-color: var(--fondo-lenguaje-JAVA);
+      border-color: var(--border-lenguaje-JAVA);
+    }
+    &.colorSpringBoot {
+      background-color: var(--fondo-lenguaje-SPRINGBOOT);
+      border-color: var(--border-lenguaje-SPRINGBOOT);
+    }
+    &.colorPostgreSQL {
+      background-color: var(--fondo-lenguaje-POSTGRESQL);
+      border-color: var(--border-lenguaje-POSTGRESQL);
     }
   }
 </style>

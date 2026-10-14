@@ -18,6 +18,9 @@ export const categorySchema = z.union([
   z.literal("Rxjs"),
   z.literal("Testing"),
   z.literal("Docker"),
+  z.literal("Java"),
+  z.literal("Spring Boot"),
+  z.literal("PostgreSQL"),
 ])
 
 export const proyectDataSchema = z.object({

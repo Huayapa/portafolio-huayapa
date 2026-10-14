@@ -1,5 +1,5 @@
 ---
-id: 1
+id: 2
 name: PeruStoreAngular
 image: peruStoreAngular.jpg
 descript: "Tienda desarrollada con angular v21 consumiendo una API externa, integración con stripe y testing con Jest y Testing library."
